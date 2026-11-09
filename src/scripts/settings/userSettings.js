@@ -423,6 +423,19 @@ export class UserSettings {
     }
 
     /**
+     * Get or set amount of next episode timer.
+     * @param {number|undefined} val - Amount of next episode timer.
+     * @return {number} Amount of next episode timer.
+     */
+    nextEpisodeTimerLength(val) {
+        if (val !== undefined) {
+            return this.set('nextEpisodeTimerLength', val.toString());
+        }
+
+        return parseInt(this.get('nextEpisodeTimerLength') || '30000', 10);
+    }
+
+    /**
      * Get or set theme for Dashboard.
      * @param {string|undefined} [val] - Theme for Dashboard.
      * @return {string} Theme for Dashboard.
@@ -747,6 +760,7 @@ export const language = currentSettings.language.bind(currentSettings);
 export const dateTimeLocale = currentSettings.dateTimeLocale.bind(currentSettings);
 export const skipBackLength = currentSettings.skipBackLength.bind(currentSettings);
 export const skipForwardLength = currentSettings.skipForwardLength.bind(currentSettings);
+export const nextEpisodeTimerLength = currentSettings.nextEpisodeTimerLength.bind(currentSettings);
 export const dashboardTheme = currentSettings.dashboardTheme.bind(currentSettings);
 export const skin = currentSettings.skin.bind(currentSettings);
 export const theme = currentSettings.theme.bind(currentSettings);

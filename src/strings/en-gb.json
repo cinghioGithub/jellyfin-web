@@ -698,6 +698,7 @@
     "LabelSortTitle": "Sort title",
     "LabelSortOrder": "Sort order",
     "LabelSkipForwardLength": "Skip forward length",
+    "LabelNextEpisodeTimerLength": "Next Episode Timer Duration",
     "LabelPublicHttpsPortHelp": "The public port number that should be mapped to the local HTTPS port.",
     "LabelProfileContainer": "Container",
     "LabelPostProcessorArguments": "Post-processor command line arguments",

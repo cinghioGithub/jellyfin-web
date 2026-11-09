@@ -955,6 +955,7 @@
     "LabelSize": "Size",
     "LabelSkipBackLength": "Skip back length",
     "LabelSkipForwardLength": "Skip forward length",
+    "LabelNextEpisodeTimerLength": "Next Episode Timer Duration",
     "LabelSkipIfAudioTrackPresent": "Skip if the default audio track matches the download language",
     "LabelSkipIfAudioTrackPresentHelp": "Uncheck this to ensure all videos have subtitles, regardless of audio language.",
     "LabelSkipIfGraphicalSubsPresent": "Skip if the video already contains embedded subtitles",

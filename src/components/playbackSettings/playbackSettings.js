@@ -292,6 +292,10 @@ function loadForm(context, user, userSettings, systemInfo, apiClient) {
     fillSkipLengths(selectSkipForwardLength);
     selectSkipForwardLength.value = userSettings.skipForwardLength();
 
+    const selectNextEpisodeTimerLength = context.querySelector('.selectNextEpisodeTimerLength');
+    fillSkipLengths(selectNextEpisodeTimerLength);
+    selectNextEpisodeTimerLength.value = userSettings.nextEpisodeTimerLength();
+
     const selectSkipBackLength = context.querySelector('.selectSkipBackLength');
     fillSkipLengths(selectSkipBackLength);
     selectSkipBackLength.value = userSettings.skipBackLength();
@@ -338,6 +342,7 @@ function saveUser(context, user, userSettingsInstance, apiClient) {
     user.Configuration.CastReceiverId = context.querySelector('.selectChromecastVersion').value;
     userSettingsInstance.skipForwardLength(context.querySelector('.selectSkipForwardLength').value);
     userSettingsInstance.skipBackLength(context.querySelector('.selectSkipBackLength').value);
+    userSettingsInstance.nextEpisodeTimerLength(context.querySelector('.selectNextEpisodeTimerLength').value);
 
     const segmentTypeActions = context.querySelectorAll('.segmentTypeAction') || [];
     Array.prototype.forEach.call(segmentTypeActions, actionEl => {

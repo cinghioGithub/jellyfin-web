@@ -7,6 +7,7 @@ import focusManager from '../focusManager';
 import globalize from '../../lib/globalize';
 import { ServerConnections } from 'lib/jellyfin-apiclient';
 import itemHelper from '../itemHelper';
+import * as userSettings from 'scripts/settings/userSettings';
 
 import './upnextdialog.scss';
 import '../../elements/emby-button/emby-button';
@@ -51,10 +52,12 @@ function setNextVideoText() {
     const elem = instance.options.parent;
 
     const secondsRemaining = Math.max(Math.round(getTimeRemainingMs(instance) / 1000), 0);
+    const timerDuration = userSettings.nextEpisodeTimerLength() / 1000;
 
     console.debug('up next seconds remaining: ' + secondsRemaining);
+    console.debug('next episode timer: ' + timerDuration);
 
-    const timeText = '<span class="upNextDialog-countdownText">' + globalize.translate('HeaderSecondsValue', secondsRemaining) + '</span>';
+    const timeText = '<span class="upNextDialog-countdownText">' + globalize.translate('HeaderSecondsValue', timerDuration) + '</span>';
 
     let nextVideoText;
     if (instance.itemType === 'Episode') {
